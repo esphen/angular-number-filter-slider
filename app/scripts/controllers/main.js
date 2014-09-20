@@ -27,7 +27,7 @@ angular.module('sliderApp').directive('number', ['$filter', function ($filter) {
             });
 
             ctrl.$parsers.unshift(function (viewValue) {
-                var a = viewValue.replace(/\s+/g, '');
+                var a = viewValue.replace(/[\s+a-zA-Z]/g, '');
                     a = a.replace(',', '.');
 
                 //Don't filter if sting ends in comma
